@@ -1,0 +1,74 @@
+{
+    "name": "PlayerInputActionsAsset",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "2f3e9924-87e9-4764-bb2b-74ef08e079e6",
+            "actions": [
+                {
+                    "name": "Acceleration",
+                    "type": "Button",
+                    "id": "b483300b-fe05-4624-b1c9-6a16414ce543",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Roll",
+                    "type": "Button",
+                    "id": "a257526b-d4ce-4ea1-840d-640edf1911ba",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pitch",
+                    "type": "Button",
+                    "id": "6ef420d6-e0cb-49e4-be0e-621e3745c96b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b8f55cb0-fc13-4e4d-bea3-87109903c5f8",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Acceleration",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9811cf4a-d4b3-479d-a674-668307a2e15f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f72cfc3c-7e76-45c2-9aab-5ff0f4aa02fd",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
