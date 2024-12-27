@@ -16,21 +16,21 @@
                 },
                 {
                     "name": "Roll",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "a257526b-d4ce-4ea1-840d-640edf1911ba",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Pitch",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "6ef420d6-e0cb-49e4-be0e-621e3745c96b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -46,26 +46,70 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "9811cf4a-d4b3-479d-a674-668307a2e15f",
-                    "path": "",
+                    "name": "1D Axis",
+                    "id": "d2a016f2-f9d1-4f87-9fbd-47f94126838f",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "e20ee599-ad58-4cbd-ac38-ae2bfcf89423",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Roll",
                     "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "44172599-d881-46a5-9f46-f091261f8e79",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "6992c55a-0cef-45ce-9e11-6757ebfc08d7",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch",
+                    "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "f72cfc3c-7e76-45c2-9aab-5ff0f4aa02fd",
-                    "path": "",
+                    "name": "positive",
+                    "id": "77375101-1164-4f4a-a79f-815a9dc91b68",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Pitch",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "78bcd7e2-9e8b-4303-883c-cb0de32d1935",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

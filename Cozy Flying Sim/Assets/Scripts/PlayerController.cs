@@ -1,33 +1,84 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody rb;
-    [SerializeField] private float moveForce;
-    [SerializeField] private float lift;
-    private Quaternion rotation;
-    private Vector3 targetVelocity;
-    private Vector3 currentVelocity;
+    private PlayerInputActionsAsset actionsAsset;
 
-    // Start is called before the first frame update
-    void Start()
+    private Movement movementScript;
+
+    private InputAction accelerate;
+    private InputAction Roll;
+    private InputAction Pitch;
+
+
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        actionsAsset = new();
 
-        targetVelocity = new Vector3(rb.rotation.z, lift, moveForce);
+        movementScript = GetComponent<Movement>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        if (Input.GetKey(KeyCode.W))
+        accelerate = actionsAsset.Player.Acceleration;
+        Roll = actionsAsset.Player.Roll;
+        Pitch = actionsAsset.Player.Pitch;
+
+        accelerate.Enable();
+        accelerate.performed += OnAcceleration;
+
+        Roll.Enable();
+        Roll.performed += OnRoll;
+
+        Pitch.Enable();
+        Pitch.performed += OnPitch;
+    }
+
+    private void OnDisable()
+    {
+        accelerate.Disable();
+
+        Roll.Disable();
+
+        Pitch.Disable();
+    }
+
+    private void OnAcceleration(InputAction.CallbackContext context)
+    {
+        Debug.Log("Forward");
+        movementScript.GetAcceleration(context.ReadValue<float>());
+    }
+
+    private void OnRoll(InputAction.CallbackContext context)
+    {
+        if (context.ReadValue<float>() > 0.1f)
         {
-            Debug.Log("Foward");
-            rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref currentVelocity, 1f);
+            Debug.Log("Right");
+            movementScript.GetRoll(context.ReadValue<float>());
+        }
+        else if (context.ReadValue<float>() < -0.1f)
+        {
+            Debug.Log("Left");
+            movementScript.GetRoll(context.ReadValue<float>());
         }
 
-           
+    }
+
+    private void OnPitch(InputAction.CallbackContext context)
+    {
+        if (context.ReadValue<float>() > 0.1f)
+        {
+            Debug.Log("Up");
+            movementScript.GetPitch(context.ReadValue<float>());
+        }
+        else if (context.ReadValue<float>() < -0.1f)
+        {
+            Debug.Log("Down");
+            movementScript.GetPitch(context.ReadValue<float>());
+        }
+
     }
 }
